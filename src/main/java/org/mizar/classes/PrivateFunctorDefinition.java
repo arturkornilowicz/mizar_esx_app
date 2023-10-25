@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,8 +16,8 @@ public class PrivateFunctorDefinition extends Item {
 
     public PrivateFunctorDefinition(Element element) {
         super(element);
-        variable = new Variable(element.element(ElementNames.VARIABLE));
-        typeList = new TypeList(element.element(ElementNames.TYPE_LIST));
+        variable = new Variable(element.element(ESXElementName.VARIABLE));
+        typeList = new TypeList(element.element(ESXElementName.TYPE_LIST));
         term = Term.buildTerm(element.elements().get(2));
     }
 

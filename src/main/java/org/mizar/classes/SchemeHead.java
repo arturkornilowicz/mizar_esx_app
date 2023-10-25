@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class SchemeHead extends Item {
 
     public SchemeHead(Element element) {
         super(element);
-        schemeName = new Scheme(element.element(ElementNames.SCHEME));
-        schematicVariables = new SchematicVariables(element.element(ElementNames.SCHEMATIC_VARIABLES));
+        schemeName = new Scheme(element.element(ESXElementName.SCHEME));
+        schematicVariables = new SchematicVariables(element.element(ESXElementName.SCHEMATIC_VARIABLES));
         schemeThesis = Formula.buildFormula(element.elements().get(2));
-        if (element.element(ElementNames.PROVISIONAL_FORMULAS) != null) {
-            provisionalFormulas = new ProvisionalFormulas(element.element(ElementNames.PROVISIONAL_FORMULAS));
+        if (element.element(ESXElementName.PROVISIONAL_FORMULAS) != null) {
+            provisionalFormulas = new ProvisionalFormulas(element.element(ESXElementName.PROVISIONAL_FORMULAS));
         }
     }
 

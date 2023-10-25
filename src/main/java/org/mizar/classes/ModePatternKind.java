@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,9 +17,9 @@ public class ModePatternKind extends XMLElement {
 
     public static ModePatternKind buildModePatternKind(Element element) {
         switch (element.getName()) {
-            case ElementNames.EXPANDABLE_MODE:
+            case ESXElementName.EXPANDABLE_MODE:
                 return new ExpandableMode(element);
-            case ElementNames.STANDARD_MODE:
+            case ESXElementName.STANDARD_MODE:
                 return new StandardMode(element);
             default:
                 Errors.error(element, "Missing Element in buildModePatternKind [" + element.getName() + "]");

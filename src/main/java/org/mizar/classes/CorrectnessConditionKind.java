@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,17 +17,17 @@ public class CorrectnessConditionKind extends XMLElement {
 
     public static CorrectnessConditionKind buildCorrectnessConditionKind(Element element) {
         switch (element.getName()) {
-            case ElementNames.COHERENCE:
+            case ESXElementName.COHERENCE:
                 return new Coherence(element);
-            case ElementNames.COMPATIBILITY:
+            case ESXElementName.COMPATIBILITY:
                 return new Compatibility(element);
-            case ElementNames.CONSISTENCY:
+            case ESXElementName.CONSISTENCY:
                 return new Consistency(element);
-            case ElementNames.EXISTENCE:
+            case ESXElementName.EXISTENCE:
                 return new Existence(element);
-            case ElementNames.REDUCIBILITY:
+            case ESXElementName.REDUCIBILITY:
                 return new Reducibility(element);
-            case ElementNames.UNIQUENESS:
+            case ESXElementName.UNIQUENESS:
                 return new Uniqueness(element);
             default:
                 Errors.error(element, "Missing Element in buildCorrectnessConditionKind [" + element.getName() + "]");

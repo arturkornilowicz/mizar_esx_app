@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class StrictPattern extends XMLElement {
 
     public StrictPattern(Element element) {
         super(element);
-        locus = new Locus(element.element(ElementNames.LOCUS));
-        loci = new Loci(element.element(ElementNames.LOCI));
+        locus = new Locus(element.element(ESXElementName.LOCUS));
+        loci = new Loci(element.element(ESXElementName.LOCI));
     }
 
     @Override

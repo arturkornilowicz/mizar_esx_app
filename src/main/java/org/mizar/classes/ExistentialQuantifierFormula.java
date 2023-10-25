@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class ExistentialQuantifierFormula extends Formula {
 
     public ExistentialQuantifierFormula(Element element) {
         super(element);
-        variableSegments = new VariableSegments(element.element(ElementNames.VARIABLE_SEGMENTS));
-        scope = new Scope(element.element(ElementNames.SCOPE));
+        variableSegments = new VariableSegments(element.element(ESXElementName.VARIABLE_SEGMENTS));
+        scope = new Scope(element.element(ESXElementName.SCOPE));
     }
 
     @Override

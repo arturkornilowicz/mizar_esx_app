@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class IterativeConclusion extends Conclusion {
 
     public IterativeConclusion(Element element) {
         super(element);
-        iterativeEquality = new IterativeEquality(element.element(ElementNames.ITERATIVE_EQUALITY));
+        iterativeEquality = new IterativeEquality(element.element(ESXElementName.ITERATIVE_EQUALITY));
     }
 
     @Override

@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class FieldSegment extends XMLElement {
 
     public FieldSegment(Element element) {
         super(element);
-        selectors = new Selectors(element.element(ElementNames.SELECTORS));
+        selectors = new Selectors(element.element(ESXElementName.SELECTORS));
         type = Type.buildType(element.elements().get(1));
     }
 

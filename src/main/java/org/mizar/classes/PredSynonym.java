@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class PredSynonym extends Item {
 
     public PredSynonym(Element element) {
         super(element);
-        predicatePattern = new PredicatePattern(element.element(ElementNames.PREDICATE_PATTERN));
-        patternShapedExpression = new PatternShapedExpression(element.element(ElementNames.PATTERN_SHAPED_EXPRESSION));
+        predicatePattern = new PredicatePattern(element.element(ESXElementName.PREDICATE_PATTERN));
+        patternShapedExpression = new PatternShapedExpression(element.element(ESXElementName.PATTERN_SHAPED_EXPRESSION));
     }
 
     @Override

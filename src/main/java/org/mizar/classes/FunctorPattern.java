@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,9 +17,9 @@ public class FunctorPattern extends Pattern {
 
     public static FunctorPattern buildFunctorPattern(Element element) {
         switch (element.getName()) {
-            case ElementNames.CIRCUMFIXFUNCTOR_PATTERN:
+            case ESXElementName.CIRCUMFIXFUNCTOR_PATTERN:
                 return new CircumfixFunctorPattern(element);
-            case ElementNames.INFIXFUNCTOR_PATTERN:
+            case ESXElementName.INFIXFUNCTOR_PATTERN:
                 return new InfixFunctorPattern(element);
             default:
                 Errors.error(element, "Missing Element in buildFunctorPattern [" + element.getName() + "]");

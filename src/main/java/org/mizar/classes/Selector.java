@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class Selector extends XMLElement {
 
     public Selector(Element element) {
         super(element);
-        locus = new Locus(element.element(ElementNames.LOCUS));
+        locus = new Locus(element.element(ESXElementName.LOCUS));
     }
 
     @Override

@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,9 +17,9 @@ public class Assumption extends Item {
 
     public static Assumption buildAssumption(Element element) {
         switch (element.getName()) {
-            case ElementNames.SINGLE_ASSUMPTION:
+            case ESXElementName.SINGLE_ASSUMPTION:
                 return new SingleAssumption(element);
-            case ElementNames.COLLECTIVE_ASSUMPTION:
+            case ESXElementName.COLLECTIVE_ASSUMPTION:
                 return new CollectiveAssumption(element);
             default:
                 Errors.error(element, "Missing Element in buildAssumption [" + element.getName() + "]");

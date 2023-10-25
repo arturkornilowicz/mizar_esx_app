@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,11 +16,11 @@ public class UniversalQuantifierFormula extends Formula {
 
     public UniversalQuantifierFormula(Element element) {
         super(element);
-        variableSegments = new VariableSegments(element.element(ElementNames.VARIABLE_SEGMENTS));
-        if (element.element(ElementNames.RESTRICTION) != null) {
-            restriction = new Restriction(element.element(ElementNames.RESTRICTION));
+        variableSegments = new VariableSegments(element.element(ESXElementName.VARIABLE_SEGMENTS));
+        if (element.element(ESXElementName.RESTRICTION) != null) {
+            restriction = new Restriction(element.element(ESXElementName.RESTRICTION));
         }
-        scope = new Scope(element.element(ElementNames.SCOPE));
+        scope = new Scope(element.element(ESXElementName.SCOPE));
     }
 
     @Override

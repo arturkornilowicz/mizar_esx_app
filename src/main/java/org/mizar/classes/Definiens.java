@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,29 +16,29 @@ public class Definiens extends XMLElement {
     }
 
     public static Definiens buildDefiniens(Element element) {
-        switch (element.attributeValue(AttributeNames.KIND)) {
+        switch (element.attributeValue(ESXAttributeName.KIND)) {
             case AttributeValues.SIMPLE_DEFINIENS:
-                switch (element.attributeValue(AttributeNames.SHAPE)) {
+                switch (element.attributeValue(ESXAttributeName.SHAPE)) {
                     case AttributeValues.FORMULA_EXPRESSION:
                         return new SimplePredicativeDefiniens(element);
                     case AttributeValues.TERM_EXPRESSION:
                         return new SimpleEquationalDefiniens(element);
                     default:
-                        Errors.error(element, "Missing Element in buildDefiniensSimple [" + element.attributeValue(AttributeNames.SHAPE) + "]");
+                        Errors.error(element, "Missing Element in buildDefiniensSimple [" + element.attributeValue(ESXAttributeName.SHAPE) + "]");
                         return null;
                 }
             case AttributeValues.CONDITIONAL_DEFINIENS:
-                switch (element.attributeValue(AttributeNames.SHAPE)) {
+                switch (element.attributeValue(ESXAttributeName.SHAPE)) {
                     case AttributeValues.FORMULA_EXPRESSION:
                         return new ComplexDefiniens(element);
                     case AttributeValues.TERM_EXPRESSION:
                         return new ComplexDefiniens(element);
                     default:
-                        Errors.error(element, "Missing Element in buildDefiniensComplex [" + element.attributeValue(AttributeNames.SHAPE) + "]");
+                        Errors.error(element, "Missing Element in buildDefiniensComplex [" + element.attributeValue(ESXAttributeName.SHAPE) + "]");
                         return null;
                 }
             default:
-                Errors.error(element, "Missing Element in buildDefiniens [" + element.attributeValue(AttributeNames.KIND) + "]");
+                Errors.error(element, "Missing Element in buildDefiniens [" + element.attributeValue(ESXAttributeName.KIND) + "]");
                 return null;
         }
     }

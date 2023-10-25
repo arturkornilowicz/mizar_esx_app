@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,35 +17,35 @@ public class Term extends XMLElement {
 
     public static Term buildTerm(Element element) {
         switch (element.getName()) {
-            case ElementNames.AGGREGATE_TERM:
+            case ESXElementName.AGGREGATE_TERM:
                 return new AggregateTerm(element);
-            case ElementNames.CIRCUMFIX_TERM:
+            case ESXElementName.CIRCUMFIX_TERM:
                 return new CircumfixTerm(element);
-            case ElementNames.FORGETFUL_FUNCTOR_TERM:
+            case ESXElementName.FORGETFUL_FUNCTOR_TERM:
                 return new ForgetfulFunctorTerm(element);
-            case ElementNames.FRAENKEL_TERM:
+            case ESXElementName.FRAENKEL_TERM:
                 return new FraenkelTerm(element);
-            case ElementNames.GLOBAL_CHOICE_TERM:
+            case ESXElementName.GLOBAL_CHOICE_TERM:
                 return new GlobalChoiceTerm(element);
-            case ElementNames.INFIX_TERM:
+            case ESXElementName.INFIX_TERM:
                 return new InfixTerm(element);
-            case ElementNames.INTERNAL_SELECTOR_TERM:
+            case ESXElementName.INTERNAL_SELECTOR_TERM:
                 return new InternalSelectorTerm(element);
-            case ElementNames.IT_TERM:
+            case ESXElementName.IT_TERM:
                 return new ItTerm(element);
-            case ElementNames.NUMERAL_TERM:
+            case ESXElementName.NUMERAL_TERM:
                 return new NumeralTerm(element);
-            case ElementNames.PLACEHOLDER_TERM:
+            case ESXElementName.PLACEHOLDER_TERM:
                 return new PlaceholderTerm(element);
-            case ElementNames.PRIVATE_FUNCTOR_TERM:
+            case ESXElementName.PRIVATE_FUNCTOR_TERM:
                 return new PrivateFunctorTerm(element);
-            case ElementNames.QUALIFICATION_TERM:
+            case ESXElementName.QUALIFICATION_TERM:
                 return new QualificationTerm(element);
-            case ElementNames.SELECTOR_TERM:
+            case ESXElementName.SELECTOR_TERM:
                 return new SelectorTerm(element);
-            case ElementNames.SIMPLE_FRAENKEL_TERM:
+            case ESXElementName.SIMPLE_FRAENKEL_TERM:
                 return new SimpleFraenkelTerm(element);
-            case ElementNames.SIMPLE_TERM:
+            case ESXElementName.SIMPLE_TERM:
                 return new SimpleTerm(element);
             default:
                 Errors.error(element, "Missing Element in buildTerm [" + element.getName() + "]");

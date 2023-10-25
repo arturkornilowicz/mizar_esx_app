@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class AdjectiveCluster extends XMLElement {
 
     public AdjectiveCluster(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.ATTRIBUTE)) {
+        for (Element element1: element.elements(ESXElementName.ATTRIBUTE)) {
             attributes.add(new Attribute(element1));
         }
     }

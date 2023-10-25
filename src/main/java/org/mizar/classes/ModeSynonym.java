@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class ModeSynonym extends Item {
 
     public ModeSynonym(Element element) {
         super(element);
-        modePattern = new ModePattern(element.element(ElementNames.MODE_PATTERN));
-        patternShapedExpression = new PatternShapedExpression(element.element(ElementNames.PATTERN_SHAPED_EXPRESSION));
+        modePattern = new ModePattern(element.element(ESXElementName.MODE_PATTERN));
+        patternShapedExpression = new PatternShapedExpression(element.element(ESXElementName.PATTERN_SHAPED_EXPRESSION));
     }
 
     @Override

@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class SelectorFunctorPattern extends XMLElement {
 
     public SelectorFunctorPattern(Element element) {
         super(element);
-        loci = new Loci(element.element(ElementNames.LOCI));
+        loci = new Loci(element.element(ESXElementName.LOCI));
     }
 
     @Override

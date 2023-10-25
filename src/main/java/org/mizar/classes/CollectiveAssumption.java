@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class CollectiveAssumption extends Assumption {
 
     public CollectiveAssumption(Element element) {
         super(element);
-        conditions = new Conditions(element.element(ElementNames.CONDITIONS));
+        conditions = new Conditions(element.element(ESXElementName.CONDITIONS));
     }
 
     @Override

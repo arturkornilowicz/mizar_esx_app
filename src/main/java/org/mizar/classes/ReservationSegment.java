@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,8 +16,8 @@ public class ReservationSegment extends XMLElement {
 
     public ReservationSegment(Element element) {
         super(element);
-        variables = new Variables(element.element(ElementNames.VARIABLES));
-        variableSegments = new VariableSegments(element.element(ElementNames.VARIABLE_SEGMENTS));
+        variables = new Variables(element.element(ESXElementName.VARIABLES));
+        variableSegments = new VariableSegments(element.element(ESXElementName.VARIABLE_SEGMENTS));
         type = Type.buildType(element.elements().get(2));
     }
 

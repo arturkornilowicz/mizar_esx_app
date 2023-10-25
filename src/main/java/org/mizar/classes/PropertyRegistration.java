@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class PropertyRegistration extends Item {
 
     public PropertyRegistration(Element element) {
         super(element);
-        properties = new Properties(element.element(ElementNames.PROPERTIES));
+        properties = new Properties(element.element(ESXElementName.PROPERTIES));
         justification = Justification.buildJustification(element.elements().get(1));
     }
 

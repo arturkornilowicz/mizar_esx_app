@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class Reservation extends Item {
 
     public Reservation(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.RESERVATION_SEGMENT)) {
+        for (Element element1: element.elements(ESXElementName.RESERVATION_SEGMENT)) {
             segments.add(new ReservationSegment(element1));
         }
     }

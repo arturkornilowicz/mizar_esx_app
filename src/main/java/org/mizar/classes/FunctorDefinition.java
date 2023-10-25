@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,13 +17,13 @@ public class FunctorDefinition extends Item {
 
     public FunctorDefinition(Element element) {
         super(element);
-        redefine = new Redefine(element.element(ElementNames.REDEFINE));
+        redefine = new Redefine(element.element(ESXElementName.REDEFINE));
         functorPattern = FunctorPattern.buildFunctorPattern(element.elements().get(1));
-        if (element.element(ElementNames.TYPE_SPECIFICATION) != null) {
-            typeSpecification = new TypeSpecification(element.element(ElementNames.TYPE_SPECIFICATION));
+        if (element.element(ESXElementName.TYPE_SPECIFICATION) != null) {
+            typeSpecification = new TypeSpecification(element.element(ESXElementName.TYPE_SPECIFICATION));
         }
-        if (element.element(ElementNames.DEFINIENS) != null) {
-            definiens = Definiens.buildDefiniens(element.element(ElementNames.DEFINIENS));
+        if (element.element(ESXElementName.DEFINIENS) != null) {
+            definiens = Definiens.buildDefiniens(element.element(ESXElementName.DEFINIENS));
         }
     }
 

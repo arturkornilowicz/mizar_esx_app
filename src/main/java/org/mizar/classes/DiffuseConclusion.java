@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class DiffuseConclusion extends Conclusion {
 
     public DiffuseConclusion(Element element) {
         super(element);
-        diffuseStatement = new DiffuseStatement(element.element(ElementNames.DIFFUSE_STATEMENT));
-        block = Block.buildBlock(element.element(ElementNames.BLOCK));
+        diffuseStatement = new DiffuseStatement(element.element(ESXElementName.DIFFUSE_STATEMENT));
+        block = Block.buildBlock(element.element(ESXElementName.BLOCK));
     }
 
     @Override

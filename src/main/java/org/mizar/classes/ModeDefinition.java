@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,8 +16,8 @@ public class ModeDefinition extends Item {
 
     public ModeDefinition(Element element) {
         super(element);
-        redefine = new Redefine(element.element(ElementNames.REDEFINE));
-        modePattern = new ModePattern(element.element(ElementNames.MODE_PATTERN));
+        redefine = new Redefine(element.element(ESXElementName.REDEFINE));
+        modePattern = new ModePattern(element.element(ESXElementName.MODE_PATTERN));
         modePatternKind = ModePatternKind.buildModePatternKind(element.elements().get(2));
     }
 

@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,10 +17,10 @@ public class IterativeEquality extends RegularStatement {
 
     public IterativeEquality(Element element) {
         super(element);
-        label = new Label(element.element(ElementNames.LABEL));
-        relationFormula = new RelationFormula(element.element(ElementNames.RELATION_FORMULA));
+        label = new Label(element.element(ESXElementName.LABEL));
+        relationFormula = new RelationFormula(element.element(ESXElementName.RELATION_FORMULA));
         justification = Justification.buildJustification(element.elements().get(2));
-        iterativeStepsList = new IterativeStepsList(element.element(ElementNames.ITERATIVE_STEPS_LIST));
+        iterativeStepsList = new IterativeStepsList(element.element(ESXElementName.ITERATIVE_STEPS_LIST));
     }
 
     @Override

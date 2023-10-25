@@ -4,6 +4,7 @@ import java.util.*;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,13 +16,13 @@ public class Block extends XMLElement {
 
     public Block(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.ITEM)) {
+        for (Element element1: element.elements(ESXElementName.ITEM)) {
             items.add(Item.buildItem(element1));
         }
     }
 
     public static Block buildBlock(Element element) {
-        switch (element.attributeValue(AttributeNames.KIND)) {
+        switch (element.attributeValue(ESXAttributeName.KIND)) {
             case "Case":
                 return new Block(element);
             case "Definitional-Block":
@@ -41,7 +42,7 @@ public class Block extends XMLElement {
             case "Suppose":
                 return new Block(element);
             default:
-                Errors.error(element, "Missing Element in buildBlock [" + element.attributeValue(AttributeNames.KIND) + "]");
+                Errors.error(element, "Missing Element in buildBlock [" + element.attributeValue(ESXAttributeName.KIND) + "]");
                 return null;
         }
      }

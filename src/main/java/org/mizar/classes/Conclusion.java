@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class Conclusion extends Item {
 
     public static Conclusion buildConclusion(Element element) {
         switch (element.elements().get(0).getName()) {
-            case ElementNames.DIFFUSE_STATEMENT:
+            case ESXElementName.DIFFUSE_STATEMENT:
                 return new DiffuseConclusion(element);
-            case ElementNames.ITERATIVE_EQUALITY:
+            case ESXElementName.ITERATIVE_EQUALITY:
                 return new IterativeConclusion(element);
-            case ElementNames.PROPOSITION:
+            case ESXElementName.PROPOSITION:
                 return new PropositionalConclusion(element);
             default:
                 Errors.error(element, "Missing Element in buildConclusion [" + element.elements().get(0).getName() + "]");

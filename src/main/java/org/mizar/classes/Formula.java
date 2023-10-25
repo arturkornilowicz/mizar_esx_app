@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,37 +17,37 @@ public class Formula extends XMLElement {
 
     public static Formula buildFormula(Element element) {
         switch (element.getName()) {
-            case ElementNames.BICONDITIONAL_FORMULA:
+            case ESXElementName.BICONDITIONAL_FORMULA:
                 return new BiconditionalFormula(element);
-            case ElementNames.CONDITIONAL_FORMULA:
+            case ESXElementName.CONDITIONAL_FORMULA:
                 return new ConditionalFormula(element);
-            case ElementNames.CONJUNCTIVE_FORMULA:
+            case ESXElementName.CONJUNCTIVE_FORMULA:
                 return new ConjunctiveFormula(element);
-            case ElementNames.CONTRADICTION:
+            case ESXElementName.CONTRADICTION:
                 return new Contradiction(element);
-            case ElementNames.DISJUNCTIVE_FORMULA:
+            case ESXElementName.DISJUNCTIVE_FORMULA:
                 return new DisjunctiveFormula(element);
-            case ElementNames.EXISTENTIAL_QUANTIFIER_FORMULA:
+            case ESXElementName.EXISTENTIAL_QUANTIFIER_FORMULA:
                 return new ExistentialQuantifierFormula(element);
-            case ElementNames.FLEXARYCONJUNCTIVE_FORMULA:
+            case ESXElementName.FLEXARYCONJUNCTIVE_FORMULA:
                 return new FlexaryConjunctiveFormula(element);
-            case ElementNames.FLEXARYDISJUNCTIVE_FORMULA:
+            case ESXElementName.FLEXARYDISJUNCTIVE_FORMULA:
                 return new FlexaryDisjunctiveFormula(element);
-            case ElementNames.MULTI_ATTRIBUTIVE_FORMULA:
+            case ESXElementName.MULTI_ATTRIBUTIVE_FORMULA:
                 return new MultiAttributiveFormula(element);
-            case ElementNames.MULTI_RELATION_FORMULA:
+            case ESXElementName.MULTI_RELATION_FORMULA:
                 return new MultiRelationFormula(element);
-            case ElementNames.NEGATED_FORMULA:
+            case ESXElementName.NEGATED_FORMULA:
                 return new NegatedFormula(element);
-            case ElementNames.QUALIFYING_FORMULA:
+            case ESXElementName.QUALIFYING_FORMULA:
                 return new QualifyingFormula(element);
-            case ElementNames.PRIVATE_PREDICATE_FORMULA:
+            case ESXElementName.PRIVATE_PREDICATE_FORMULA:
                 return new PrivatePredicateFormula(element);
-            case ElementNames.RELATION_FORMULA:
+            case ESXElementName.RELATION_FORMULA:
                 return new RelationFormula(element);
-            case ElementNames.THESIS:
+            case ESXElementName.THESIS:
                 return new Thesis(element);
-            case ElementNames.UNIVERSAL_QUANTIFIER_FORMULA:
+            case ESXElementName.UNIVERSAL_QUANTIFIER_FORMULA:
                 return new UniversalQuantifierFormula(element);
             default:
                 Errors.error(element, "Missing Element in buildFormula [" + element.getName() + "]");

@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class AttrAntonym extends Item {
 
     public AttrAntonym(Element element) {
         super(element);
-        attributePattern = new AttributePattern(element.element(ElementNames.ATTRIBUTE_PATTERN));
-        patternShapedExpression = new PatternShapedExpression(element.element(ElementNames.PATTERN_SHAPED_EXPRESSION));
+        attributePattern = new AttributePattern(element.element(ESXElementName.ATTRIBUTE_PATTERN));
+        patternShapedExpression = new PatternShapedExpression(element.element(ESXElementName.PATTERN_SHAPED_EXPRESSION));
     }
 
     @Override

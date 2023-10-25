@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class ExemplificationKind extends Item {
 
     public static ExemplificationKind buildExemplificationKind(Element element) {
         switch (element.getName()) {
-            case ElementNames.EXAMPLE:
+            case ESXElementName.EXAMPLE:
                 return new Example(element);
-            case ElementNames.EXEMPLIFYINGVARIABLE:
+            case ESXElementName.EXEMPLIFYINGVARIABLE:
                 return new ExemplifyingVariable(element);
-            case ElementNames.IMPLICITEXEMPLIFICATION:
+            case ESXElementName.IMPLICITEXEMPLIFICATION:
                 return new ImplicitExemplification(element);
             default:
                 Errors.error(element, "Missing Element in buildExemplificationKind [" + element.getName() + "]");

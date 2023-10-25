@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,11 +15,11 @@ public class StandardMode extends ModePatternKind {
 
     public StandardMode(Element element) {
         super(element);
-        if (element.element(ElementNames.TYPE_SPECIFICATION) != null) {
-            typeSpecification = new TypeSpecification(element.element(ElementNames.TYPE_SPECIFICATION));
+        if (element.element(ESXElementName.TYPE_SPECIFICATION) != null) {
+            typeSpecification = new TypeSpecification(element.element(ESXElementName.TYPE_SPECIFICATION));
         }
-        if (element.element(ElementNames.DEFINIENS) != null) {
-            definiens = Definiens.buildDefiniens(element.element(ElementNames.DEFINIENS));
+        if (element.element(ESXElementName.DEFINIENS) != null) {
+            definiens = Definiens.buildDefiniens(element.element(ESXElementName.DEFINIENS));
         }
     }
 

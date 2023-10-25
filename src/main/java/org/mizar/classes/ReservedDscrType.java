@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class ReservedDscrType extends XMLElement {
 
     public ReservedDscrType(Element element) {
         super(element);
-        substitutions = new Substitutions(element.element(ElementNames.SUBSTITUTIONS));
+        substitutions = new Substitutions(element.element(ESXElementName.SUBSTITUTIONS));
         type = Type.buildType(element.elements().get(1));
     }
 

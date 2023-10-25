@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class PragmaKind extends Item {
 
     public static PragmaKind buildPragmaKind(Element element) {
         switch (element.getName()) {
-            case ElementNames.CANCELED:
+            case ESXElementName.CANCELED:
                 return new Canceled(element);
-            case ElementNames.NOTION_NAME:
+            case ESXElementName.NOTION_NAME:
                 return new NotionName(element);
-            case ElementNames.UNKNOWN:
+            case ESXElementName.UNKNOWN:
                 return new Unknown(element);
             default:
                 Errors.error(element, "Missing Element in buildPragmaKind [" + element.getName() + "]");

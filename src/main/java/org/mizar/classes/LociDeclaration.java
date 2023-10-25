@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,9 +15,9 @@ public class LociDeclaration extends Item {
 
     public LociDeclaration(Element element) {
         super(element);
-        qualifiedSegments = new QualifiedSegments(element.element(ElementNames.QUALIFIED_SEGMENTS));
-        if (element.element(ElementNames.CONDITIONS) != null) {
-            conditions = new Conditions(element.element(ElementNames.CONDITIONS));
+        qualifiedSegments = new QualifiedSegments(element.element(ESXElementName.QUALIFIED_SEGMENTS));
+        if (element.element(ESXElementName.CONDITIONS) != null) {
+            conditions = new Conditions(element.element(ESXElementName.CONDITIONS));
         }
     }
 

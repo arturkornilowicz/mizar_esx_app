@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class Selectors extends XMLElement {
 
     public Selectors(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.SELECTOR)) {
+        for (Element element1: element.elements(ESXElementName.SELECTOR)) {
             selectors.add(new Selector(element1));
         }
     }

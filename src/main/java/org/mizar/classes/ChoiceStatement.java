@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,8 +16,8 @@ public class ChoiceStatement extends Item {
 
     public ChoiceStatement(Element element) {
         super(element);
-        qualifiedSegments = new QualifiedSegments(element.element(ElementNames.QUALIFIED_SEGMENTS));
-        conditions = new Conditions(element.element(ElementNames.CONDITIONS));
+        qualifiedSegments = new QualifiedSegments(element.element(ESXElementName.QUALIFIED_SEGMENTS));
+        conditions = new Conditions(element.element(ESXElementName.CONDITIONS));
         justification = Justification.buildJustification(element.elements().get(2));
     }
 

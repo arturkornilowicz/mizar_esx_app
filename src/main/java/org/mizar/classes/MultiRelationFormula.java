@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,7 +17,7 @@ public class MultiRelationFormula extends Formula {
     public MultiRelationFormula(Element element) {
         super(element);
         formula = Formula.buildFormula(element.elements().get(0));
-        for (Element element1: element.elements(ElementNames.RIGHTSIDEOF_RELATION_FORMULA)) {
+        for (Element element1: element.elements(ESXElementName.RIGHTSIDEOF_RELATION_FORMULA)) {
             rightSideOfRelationFormulas.add(new RightSideOfRelationFormula(element1));
         }
     }

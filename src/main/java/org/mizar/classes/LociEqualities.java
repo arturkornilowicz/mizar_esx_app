@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class LociEqualities extends XMLElement {
 
     public LociEqualities(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.LOCI_EQUALITY)) {
+        for (Element element1: element.elements(ESXElementName.LOCI_EQUALITY)) {
             lociEqualities.add(new LociEquality(element1));
         }
     }

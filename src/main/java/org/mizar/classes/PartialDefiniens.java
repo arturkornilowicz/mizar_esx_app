@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,13 +16,13 @@ public class PartialDefiniens extends XMLElement {
     }
 
     public static PartialDefiniens buildPartialDefiniens(Element element) {
-        switch (element.getParent().getParent().attributeValue(AttributeNames.SHAPE)) {
+        switch (element.getParent().getParent().attributeValue(ESXAttributeName.SHAPE)) {
             case AttributeValues.FORMULA_EXPRESSION:
                 return new PartialPredicativeDefiniens(element);
             case AttributeValues.TERM_EXPRESSION:
                 return new PartialEquationalDefiniens(element);
             default:
-                Errors.error(element, "Missing Element in buildPartialDefiniens [" + element.getParent().getParent().attributeValue(AttributeNames.SHAPE) + "]");
+                Errors.error(element, "Missing Element in buildPartialDefiniens [" + element.getParent().getParent().attributeValue(ESXAttributeName.SHAPE) + "]");
                 return null;
         }
     }

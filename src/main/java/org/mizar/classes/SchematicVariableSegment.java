@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,9 +17,9 @@ public class SchematicVariableSegment extends XMLElement {
 
     public static SchematicVariableSegment buildSchematicVariableSegment(Element element) {
         switch (element.getName()) {
-            case ElementNames.FUNCTOR_SEGMENT:
+            case ESXElementName.FUNCTOR_SEGMENT:
                 return new FunctorSegment(element);
-            case ElementNames.PREDICATE_SEGMENT:
+            case ESXElementName.PREDICATE_SEGMENT:
                 return new PredicateSegment(element);
             default:
                 Errors.error(element, "Missing Element in buildSchematicVariableSegment [" + element.getName() + "]");

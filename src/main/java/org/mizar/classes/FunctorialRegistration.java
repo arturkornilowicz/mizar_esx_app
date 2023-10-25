@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,7 +17,7 @@ public class FunctorialRegistration extends Cluster {
     public FunctorialRegistration(Element element) {
         super(element);
         term = Term.buildTerm(element.elements().get(0));
-        adjectiveCluster = new AdjectiveCluster(element.element(ElementNames.ADJECTIVE_CLUSTER));
+        adjectiveCluster = new AdjectiveCluster(element.element(ESXElementName.ADJECTIVE_CLUSTER));
         if (element.elements().size() > 2) {
             type = Type.buildType(element.elements().get(2));
         }

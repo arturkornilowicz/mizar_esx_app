@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class FreeVariableSegment extends QualifiedSegment {
 
     public FreeVariableSegment(Element element) {
         super(element);
-        variable = new Variable(element.element(ElementNames.VARIABLE));
-        reservedDscrType = new ReservedDscrType((element.element(ElementNames.RESERVEDDSCR_TYPE)));
+        variable = new Variable(element.element(ESXElementName.VARIABLE));
+        reservedDscrType = new ReservedDscrType((element.element(ESXElementName.RESERVEDDSCR_TYPE)));
     }
 
     @Override

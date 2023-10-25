@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,9 +16,9 @@ public class Identify extends Item {
 
     public Identify(Element element) {
         super(element);
-        leftPattern = new PatternShapedExpression(element.elements(ElementNames.PATTERN_SHAPED_EXPRESSION).get(0));
-        rightPattern = new PatternShapedExpression(element.elements(ElementNames.PATTERN_SHAPED_EXPRESSION).get(1));
-        lociEqualities = new LociEqualities(element.element(ElementNames.LOCI_EQUALITIES));
+        leftPattern = new PatternShapedExpression(element.elements(ESXElementName.PATTERN_SHAPED_EXPRESSION).get(0));
+        rightPattern = new PatternShapedExpression(element.elements(ESXElementName.PATTERN_SHAPED_EXPRESSION).get(1));
+        lociEqualities = new LociEqualities(element.element(ESXElementName.LOCI_EQUALITIES));
     }
 
     @Override

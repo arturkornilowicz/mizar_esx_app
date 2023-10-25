@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,10 +16,10 @@ public class AttributeDefinition extends Item {
 
     public AttributeDefinition(Element element) {
         super(element);
-        redefine = new Redefine(element.element(ElementNames.REDEFINE));
-        attributePattern = new AttributePattern(element.element(ElementNames.ATTRIBUTE_PATTERN));
-        if (element.element(ElementNames.DEFINIENS) != null) {
-            definiens = Definiens.buildDefiniens(element.element(ElementNames.DEFINIENS));
+        redefine = new Redefine(element.element(ESXElementName.REDEFINE));
+        attributePattern = new AttributePattern(element.element(ESXElementName.ATTRIBUTE_PATTERN));
+        if (element.element(ESXElementName.DEFINIENS) != null) {
+            definiens = Definiens.buildDefiniens(element.element(ESXElementName.DEFINIENS));
         }
     }
 

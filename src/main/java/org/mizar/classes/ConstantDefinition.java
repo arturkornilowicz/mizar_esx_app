@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class ConstantDefinition extends Item {
 
     public ConstantDefinition(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.EQUATING)) {
+        for (Element element1: element.elements(ESXElementName.EQUATING)) {
             equatings.add(new Equating(element1));
         }
     }

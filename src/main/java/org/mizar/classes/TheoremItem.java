@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class TheoremItem extends Item {
 
     public TheoremItem(Element element) {
         super(element);
-        proposition = new Proposition(element.element(ElementNames.PROPOSITION));
+        proposition = new Proposition(element.element(ESXElementName.PROPOSITION));
         justification = Justification.buildJustification(element.elements().get(1));
     }
 

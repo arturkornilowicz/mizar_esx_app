@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class PredicateSegment extends SchematicVariableSegment {
 
     public PredicateSegment(Element element) {
         super(element);
-        variables = new Variables(element.element(ElementNames.VARIABLES));
-        typeList = new TypeList(element.element(ElementNames.TYPE_LIST));
+        variables = new Variables(element.element(ESXElementName.VARIABLES));
+        typeList = new TypeList(element.element(ESXElementName.TYPE_LIST));
     }
 
     @Override

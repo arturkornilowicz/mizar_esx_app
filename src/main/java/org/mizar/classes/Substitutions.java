@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class Substitutions extends XMLElement {
 
     public Substitutions(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.SUBSTITUTION)) {
+        for (Element element1: element.elements(ESXElementName.SUBSTITUTION)) {
             substitutions.add(new Substitution(element1));
         }
     }

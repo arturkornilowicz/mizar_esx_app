@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class DiffuseStatement extends XMLElement {
 
     public DiffuseStatement(Element element) {
         super(element);
-        label = new Label(element.element(ElementNames.LABEL));
+        label = new Label(element.element(ESXElementName.LABEL));
     }
 
     @Override

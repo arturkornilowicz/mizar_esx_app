@@ -3,6 +3,7 @@ package org.mizar.classes;
 import java.util.*;
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class IterativeStepsList extends XMLElement {
 
     public IterativeStepsList(Element element) {
         super(element);
-        for (Element element1: element.elements(ElementNames.ITERATIVE_STEP)) {
+        for (Element element1: element.elements(ESXElementName.ITERATIVE_STEP)) {
             iterativeSteps.add(new IterativeStep(element1));
         }
     }

@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class Correctness extends Item {
 
     public Correctness(Element element) {
         super(element);
-        correctnessConditions = new CorrectnessConditions(element.element(ElementNames.CORRECTNESS_CONDITIONS));
+        correctnessConditions = new CorrectnessConditions(element.element(ESXElementName.CORRECTNESS_CONDITIONS));
         justification = Justification.buildJustification(element.elements().get(1));
     }
 

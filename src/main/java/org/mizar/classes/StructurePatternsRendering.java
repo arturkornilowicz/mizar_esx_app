@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,10 +17,10 @@ public class StructurePatternsRendering extends XMLElement {
 
     public StructurePatternsRendering(Element element) {
         super(element);
-        aggregateFunctorPattern = new AggregateFunctorPattern(element.element(ElementNames.AGGREGATEFUNCTOR_PATTERN));
-        forgetfulFunctorPattern = new ForgetfulFunctorPattern(element.element(ElementNames.FORGETFULFUNCTOR_PATTERN));
-        strictPattern = new StrictPattern(element.element(ElementNames.STRICT_PATTERN));
-        selectorsList = new SelectorsList(element.element(ElementNames.SELECTORS_LIST));
+        aggregateFunctorPattern = new AggregateFunctorPattern(element.element(ESXElementName.AGGREGATEFUNCTOR_PATTERN));
+        forgetfulFunctorPattern = new ForgetfulFunctorPattern(element.element(ESXElementName.FORGETFULFUNCTOR_PATTERN));
+        strictPattern = new StrictPattern(element.element(ESXElementName.STRICT_PATTERN));
+        selectorsList = new SelectorsList(element.element(ESXElementName.SELECTORS_LIST));
     }
 
     @Override

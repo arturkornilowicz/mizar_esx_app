@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class PrivatePredicateFormula extends Formula {
 
     public PrivatePredicateFormula(Element element) {
         super(element);
-        arguments = new Arguments(element.element(ElementNames.ARGUMENTS));
+        arguments = new Arguments(element.element(ESXElementName.ARGUMENTS));
     }
 
     @Override

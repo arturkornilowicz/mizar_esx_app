@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ public class CircumfixFunctorPattern extends FunctorPattern {
 
     public CircumfixFunctorPattern(Element element) {
         super(element);
-        rightCircumflexSymbol = new RightCircumflexSymbol(element.element(ElementNames.RIGHT_CIRCUMFLEX_SYMBOL));
-        loci = new Loci(element.element(ElementNames.LOCI));
+        rightCircumflexSymbol = new RightCircumflexSymbol(element.element(ESXElementName.RIGHT_CIRCUMFLEX_SYMBOL));
+        loci = new Loci(element.element(ESXElementName.LOCI));
     }
 
     @Override

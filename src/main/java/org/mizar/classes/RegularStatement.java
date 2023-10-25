@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class RegularStatement extends Item {
 
     public static RegularStatement buildRegularStatement(Element element) {
         switch (element.elements().get(0).getName()) {
-            case ElementNames.DIFFUSE_STATEMENT:
+            case ESXElementName.DIFFUSE_STATEMENT:
                 return new RegularStatementNow(element);
-            case ElementNames.ITERATIVE_EQUALITY:
-                return new IterativeEquality(element.element(ElementNames.ITERATIVE_EQUALITY));
-            case ElementNames.PROPOSITION:
+            case ESXElementName.ITERATIVE_EQUALITY:
+                return new IterativeEquality(element.element(ESXElementName.ITERATIVE_EQUALITY));
+            case ESXElementName.PROPOSITION:
                 return new RegularStatementProposition(element);
             default:
                 Errors.error(element, "Missing Element in buildRegularStatement [" + element.elements().get(0).getName() + "]");

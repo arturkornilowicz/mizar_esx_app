@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -13,13 +14,13 @@ public class Otherwise extends XMLElement {
     public Otherwise(Element element) { super(element); }
 
     public static Otherwise buildOtherwise(Element element) {
-        switch (element.getParent().attributeValue(AttributeNames.SHAPE)) {
+        switch (element.getParent().attributeValue(ESXAttributeName.SHAPE)) {
             case AttributeValues.FORMULA_EXPRESSION:
                 return new OtherwisePredicative(element);
             case AttributeValues.TERM_EXPRESSION:
                 return new OtherwiseEquational(element);
             default:
-                Errors.error(element, "Missing Element in buildOtherwise [" + element.getParent().attributeValue(AttributeNames.SHAPE) + "]");
+                Errors.error(element, "Missing Element in buildOtherwise [" + element.getParent().attributeValue(ESXAttributeName.SHAPE) + "]");
                 return null;
         }
     }

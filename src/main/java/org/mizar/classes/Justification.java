@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class Justification extends XMLElement {
 
     public static Justification buildJustification(Element element) {
         switch (element.getName()) {
-            case ElementNames.BLOCK:
+            case ESXElementName.BLOCK:
                 return new ProofJustification(element);
-            case ElementNames.SCHEME_JUSTIFICATION:
+            case ESXElementName.SCHEME_JUSTIFICATION:
                 return new SchemeJustification(element);
-            case ElementNames.STRAIGHTFORWARD_JUSTIFICATION:
+            case ESXElementName.STRAIGHTFORWARD_JUSTIFICATION:
                 return new StraightforwardJustification(element);
             default:
                 Errors.error(element, "Missing Element in buildJustification [" + element.getName() + "]");

@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ public class Example extends ExemplificationKind {
 
     public Example(Element element) {
         super(element);
-        variable = new Variable(element.element(ElementNames.VARIABLE));
+        variable = new Variable(element.element(ESXElementName.VARIABLE));
         term = Term.buildTerm(element.elements().get(1));
     }
 

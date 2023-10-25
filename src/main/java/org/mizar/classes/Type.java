@@ -3,6 +3,7 @@ package org.mizar.classes;
 import lombok.*;
 import org.dom4j.*;
 import org.mizar.misc.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -16,11 +17,11 @@ public class Type extends XMLElement {
 
     public static Type buildType(Element element) {
         switch (element.getName()) {
-            case ElementNames.CLUSTERED_TYPE:
+            case ESXElementName.CLUSTERED_TYPE:
                 return new ClusteredType(element);
-            case ElementNames.STANDARD_TYPE:
+            case ESXElementName.STANDARD_TYPE:
                 return new StandardType(element);
-            case ElementNames.STRUCT_TYPE:
+            case ESXElementName.STRUCT_TYPE:
                 return new StructType(element);
             default:
                 Errors.error(element, "Missing Element in buildType [" + element.getName() + "]");

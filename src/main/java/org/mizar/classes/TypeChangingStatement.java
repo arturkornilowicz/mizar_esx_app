@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,7 +16,7 @@ public class TypeChangingStatement extends Item {
 
     public TypeChangingStatement(Element element) {
         super(element);
-        equalitiesList = new EqualitiesList(element.element(ElementNames.EQUALITIES_LIST));
+        equalitiesList = new EqualitiesList(element.element(ESXElementName.EQUALITIES_LIST));
         type = Type.buildType(element.elements().get(1));
         justification = Justification.buildJustification(element.elements().get(2));
     }

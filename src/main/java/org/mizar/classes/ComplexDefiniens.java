@@ -2,6 +2,7 @@ package org.mizar.classes;
 
 import lombok.*;
 import org.dom4j.*;
+import org.mizar.xml_names.*;
 
 @Setter
 @Getter
@@ -15,9 +16,9 @@ public class ComplexDefiniens extends Definiens {
 
     public ComplexDefiniens(Element element) {
         super(element);
-        label = new Label(element.element(ElementNames.LABEL));
-        partialDefiniensList = new PartialDefiniensList(element.element(ElementNames.PARTIAL_DEFINIENS_LIST));
-        otherwise = Otherwise.buildOtherwise(element.element(ElementNames.OTHERWISE));
+        label = new Label(element.element(ESXElementName.LABEL));
+        partialDefiniensList = new PartialDefiniensList(element.element(ESXElementName.PARTIAL_DEFINIENS_LIST));
+        otherwise = Otherwise.buildOtherwise(element.element(ESXElementName.OTHERWISE));
     }
 
     @Override
