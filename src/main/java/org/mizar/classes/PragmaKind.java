@@ -19,10 +19,14 @@ public class PragmaKind extends Item {
         switch (element.getName()) {
             case ESXElementName.CANCELED:
                 return new Canceled(element);
+            case ESXElementName.INSERT_SHORT_TEXT:
+                return new InsertShortText(element);
             case ESXElementName.NOTION_NAME:
                 return new NotionName(element);
             case ESXElementName.UNKNOWN:
                 return new Unknown(element);
+            case ESXElementName.URL:
+                return new Url(element);
             default:
                 Errors.error(element, "Missing Element in buildPragmaKind [" + element.getName() + "]");
                 return null;
