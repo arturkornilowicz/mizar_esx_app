@@ -8,10 +8,13 @@ import org.mizar.xml_names.*;
 @Getter
 @ToString
 
-public class PrivateFunctorTerm extends TermWithArguments {
+public class TermWithArguments extends Term {
 
-    public PrivateFunctorTerm(Element element) {
+    private Arguments arguments;
+
+    public TermWithArguments(Element element) {
         super(element);
+        arguments = new Arguments(element.element(ESXElementName.ARGUMENTS));
     }
 
     @Override
@@ -21,7 +24,7 @@ public class PrivateFunctorTerm extends TermWithArguments {
 
     @Override
     public void process() {
-        super.process();
+        arguments.run();
     }
 
     @Override

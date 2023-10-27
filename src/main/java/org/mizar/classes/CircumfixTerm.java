@@ -8,15 +8,13 @@ import org.mizar.xml_names.*;
 @Getter
 @ToString
 
-public class CircumfixTerm extends Term {
+public class CircumfixTerm extends TermWithArguments {
 
     private RightCircumflexSymbol rightCircumflexSymbol;
-    private Arguments arguments;
 
     public CircumfixTerm(Element element) {
         super(element);
         rightCircumflexSymbol = new RightCircumflexSymbol(element.element(ESXElementName.RIGHT_CIRCUMFLEX_SYMBOL));
-        arguments = new Arguments(element.element(ESXElementName.ARGUMENTS));
     }
 
     @Override
@@ -26,8 +24,8 @@ public class CircumfixTerm extends Term {
 
     @Override
     public void process() {
+        super.process();
         rightCircumflexSymbol.run();
-        arguments.run();
     }
 
     @Override
