@@ -8,7 +8,7 @@ import org.mizar.xml_names.*;
 @Getter
 @ToString
 
-public class Attribute extends XMLElement {
+public class Attribute extends XMLElement implements SmallExpression {
 
     private Arguments arguments;
 

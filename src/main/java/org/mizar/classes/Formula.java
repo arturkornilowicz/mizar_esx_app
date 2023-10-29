@@ -9,7 +9,7 @@ import org.mizar.xml_names.*;
 @Getter
 @ToString
 
-public class Formula extends XMLElement {
+public class Formula extends XMLElement implements SmallExpression {
 
     public Formula(Element element) {
         super(element);
