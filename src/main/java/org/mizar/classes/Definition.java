@@ -19,8 +19,14 @@ public class Definition extends Item {
         super(element);
         redefine = new Redefine(element.element(ESXElementName.REDEFINE));
         pattern = Pattern.buildPattern(element.elements().get(1));
-        if (element.element(ESXElementName.DEFINIENS) != null) {
-            definiens = Definiens.buildDefiniens(element.element(ESXElementName.DEFINIENS));
+        if (element.elements().size() > 2 && element.elements().get(2).getName().equals(ESXElementName.STANDARD_MODE)) {
+            if (element.elements().get(2).element(ESXElementName.DEFINIENS) != null) {
+                definiens = Definiens.buildDefiniens(element.elements().get(2).element(ESXElementName.DEFINIENS));
+            }
+        } else {
+            if (element.element(ESXElementName.DEFINIENS) != null) {
+                definiens = Definiens.buildDefiniens(element.element(ESXElementName.DEFINIENS));
+            }
         }
     }
 
@@ -40,6 +46,5 @@ public class Definition extends Item {
 
     @Override
     public void postProcess() {
-        super.postProcess();
-    }
+        super.postProcess(); }
 }

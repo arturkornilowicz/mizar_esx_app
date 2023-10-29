@@ -11,15 +11,11 @@ import org.mizar.xml_names.*;
 public class StandardMode extends ModePatternKind {
 
     private TypeSpecification typeSpecification;
-    private Definiens definiens;
 
     public StandardMode(Element element) {
         super(element);
         if (element.element(ESXElementName.TYPE_SPECIFICATION) != null) {
             typeSpecification = new TypeSpecification(element.element(ESXElementName.TYPE_SPECIFICATION));
-        }
-        if (element.element(ESXElementName.DEFINIENS) != null) {
-            definiens = Definiens.buildDefiniens(element.element(ESXElementName.DEFINIENS));
         }
     }
 
@@ -33,13 +29,8 @@ public class StandardMode extends ModePatternKind {
         if (typeSpecification != null) {
             typeSpecification.run();
         }
-        if (definiens != null) {
-            definiens.run();
-        }
     }
 
     @Override
-    public void postProcess() {
-        super.postProcess();
-    }
+    public void postProcess() { super.postProcess(); }
 }
